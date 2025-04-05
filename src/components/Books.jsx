@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import SearchBooks from "./SearchBooks";
+import { useNavigate } from "react-router-dom";
 
 export default function Books() {
   const [books, setBooks] = useState([]);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   const fetchBooks = async (query = "react") => {
     try {
@@ -39,6 +42,11 @@ export default function Books() {
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-6 items-center justify-center gap-4 ">
         {books.map((book, index) => (
           <li
+            onClick={() =>
+              navigate(`/book/${encodeURIComponent(book.key)}`, {
+                state: { book },
+              })
+            }
             key={index}
             className="bg-white p-6 rounded-xl flex flex-col justify-center items-center gap-6 shadow-md w-[200px] h-[300px]"
           >
