@@ -48,7 +48,7 @@ export default function Books() {
               })
             }
             key={index}
-            className="bg-white p-6 rounded-xl flex flex-col justify-center items-center gap-6 shadow-md w-[200px] h-[300px]"
+            className="bg-white p-6 rounded-xl flex flex-col justify-center cursor-pointer items-center gap-6 shadow-md w-[200px] h-[300px]"
           >
             <img
               src={

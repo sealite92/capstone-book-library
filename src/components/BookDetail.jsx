@@ -59,9 +59,10 @@ export default function BookDetails() {
         )}
         {book.subjects && (
           <div>
+            {/* <h2>Authors: {book.authors}</h2> */}
             <h2 className="text-xl font-semibold mt-4 mb-2">Subjects</h2>
             <ul className="list-disc list-inside text-gray-600 flex ">
-              {book.subjects.slice(0, 1).map((subject, index) => (
+              {book.subjects.slice(0, 3).map((subject, index) => (
                 <li className="" key={index}>
                   {subject}
                 </li>
