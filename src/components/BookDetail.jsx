@@ -27,7 +27,7 @@ export default function BookDetails() {
 
   useEffect(() => {
     fetchBookDetails();
-  }, []);
+  });
 
   if (loading) return <p>Loading book details...</p>;
   if (error) return <p>Error: {error.message}</p>;
