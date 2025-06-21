@@ -21,7 +21,7 @@ import PieChart from "./PieChart";
 
 export default function Container({ expenses, total, chartData }) {
   return (
-    <div className="grid grid-cols-2 grid-rows-8 gap-4 p-4 h-screen">
+    <div className="grid grid-cols-2 grid-rows-8 gap-4 p-4 h-screen ">
       <TotalExpense total={total} />
       <PieChart expenses={expenses} chartData={chartData} />
       <ExpenseDetails expenses={expenses} />
