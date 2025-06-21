@@ -39,13 +39,14 @@ export default function AddContactForm({ addContact }: TaddContactFormProps) {
           />
         </div>
       </div>
+
       <div className="flex flex-col w-full sm:w-auto">
         <div className=" border-2 border-gray-300 rounded-md p-2 flex items-center w-full">
           <span className="text-gray-400">City:</span>
           <input
             className="border-none outline-none bg-transparent mx-2 w-full"
             value={city}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setCity(e.target.value)}
             type="text"
           />
         </div>
