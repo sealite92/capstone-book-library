@@ -16,6 +16,21 @@ export default function ContactContainer() {
     setContacts([...contacts, newContact]);
   };
 
+  const deleteContact = (index: number) => {
+    const updatedContacts = contacts.filter((_, i) => i !== index);
+    setContacts(updatedContacts);
+  };
+
+  const updateContact = (index: number, updatedContact: TcontactDetail) => {
+    const updatedContacts = contacts.map((contact, i) => {
+      if (i === index) {
+        return updatedContact;
+      }
+      return contact;
+    });
+    setContacts(updatedContacts);
+  };
+
   useEffect(() => {
     const stored = localStorage.getItem("contacts");
     if (stored) {
@@ -31,10 +46,14 @@ export default function ContactContainer() {
   }, [contacts, isLoaded]);
 
   return (
-    <div className="bg-[#e0e2e6]  py-10 px-20">
+    <div className="min-h-screen bg-[#e0e2e6]  py-10 px-20">
       <Header />
       <AddContactForm addContact={addContact} />
-      <ContactList contacts={contacts} />
+      <ContactList
+        contacts={contacts}
+        updateContact={updateContact}
+        deleteContact={deleteContact}
+      />
     </div>
   );
 }
