@@ -75,7 +75,7 @@ export default function ContactList({
 
               <div className="flex justify-between items-center">
                 <button
-                  className="bg-red-500 w-[60px] p-2 rounded-md cursor-pointer flex justify-center items-center font-semibold hover:bg-gray-300"
+                  className="bg-red-200 w-[60px] p-2 rounded-md cursor-pointer flex justify-center items-center font-semibold hover:bg-red-300"
                   onClick={() => {
                     handleDelete(index);
                   }}
